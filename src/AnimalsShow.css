@@ -12,10 +12,6 @@
 }
 
 .heart{
-    height: 200px;
-}
-
-.heart{
     position: absolute;
     bottom: 10%;
     right: 10%;

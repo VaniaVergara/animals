@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 import bird from './assets/svg/bird.svg'
 import dog from './assets/svg/dog.svg'
@@ -10,7 +10,7 @@ import horse from './assets/svg/horse.svg'
 
 import './AnimalsShow.css'
 
-const svgMap ={
+const svgMap = {
     bird,
     dog,
     cat,
@@ -19,32 +19,31 @@ const svgMap ={
     horse
 }
 
-function AnimalsShow ({type}){
-    const [click, setClick] = useStates(0)
+function AnimalsShow({type}){
+    const [clicks, setClicks] = useState(0)
 
-    const handleClick =()=> {
-        setClick(cliks +1)
+    const handleClick = () => {
+        setClicks(clicks + 1)
     }
+
     return(
-        <div 
-        onClick={handleClick}
-        className="animals-show"
+        <div
+            onClick={handleClick} 
+            className="animal-show"
         >
-            <img
-               src={svg[type]}
-               alt="animal"
-               className="animal"
-           />
-           <img
-               src={heart}
-               alt="heart"
-               style={{width: 10+ 10 * clicks + 'px'}}
-               className="heart"
+            <img 
+                src={svgMap[type]} 
+                alt="animal" 
+                className="animal" 
+            />
+            <img 
+                src={heart} 
+                alt="heart"
+                style={{ width: 10 + 10 * clicks + 'px'}}
+                className="heart"
             />
         </div>
     )
 }
 
 export default AnimalsShow
-    
-
